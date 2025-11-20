@@ -1,28 +1,31 @@
 import Link from "next/link";
-import Image from "next/image";
 
-export const Navbar = () => {
+export default function Navbar() {
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center gap-4 border-b bg-layout px-4 md:px-6">
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-        <Link
-          href=""
-          title="Service"
-          className="flex items-center gap-2 text-lg text-white font-semibold md:text-base"
-        >
-          <Image
-            src="/next.svg"
-            alt="Next.js logo"
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="h-8 w-auto"
-          />
-        </Link>
-      </nav>
-      <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-        <div className="ml-auto hidden flex-1 flex-col gap-6 text-lg font-medium sm:flex-initial md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"></div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <Link href="/" className="text-2xl font-bold text-indigo-600">
+              Mon Site
+            </Link>
+          </div>
+          <div className="flex space-x-4">
+            <Link
+              href="#section1"
+              className="text-gray-600 hover:text-indigo-600 transition duration-300"
+            >
+              Section 1
+            </Link>
+            <Link
+              href="#features"
+              className="text-gray-600 hover:text-indigo-600 transition duration-300"
+            >
+              Fonctionnalités
+            </Link>
+          </div>
+        </div>
       </div>
-    </header>
+    </nav>
   );
-};
+}
